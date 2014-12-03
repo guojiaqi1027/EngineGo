@@ -12,9 +12,7 @@ public class test {
 		
 		SpearmanCorrelationUserRecommender a=new SpearmanCorrelationUserRecommender();
 		double start=System.currentTimeMillis();
-		System.out.println(a.getRecommend("100001", 5, 5));
+		System.out.println(a.getRecommend("20030", 5, 5));
 		System.out.println((System.currentTimeMillis()-start)/1000);
-		
-	
 	}
 }

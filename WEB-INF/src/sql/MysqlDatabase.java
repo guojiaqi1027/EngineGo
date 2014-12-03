@@ -31,7 +31,7 @@ public class MysqlDatabase {
 	 * @throws  
 	 */
 	public JSONArray verifyLogin(String username, String password) throws SQLException, JSONException {
-		if(username==null||password==null){
+		if(username==""||password==""){
 			JSONObject json=new JSONObject();
 			json.put("result", "false");
 			JSONArray array = new JSONArray();

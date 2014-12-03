@@ -13,9 +13,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 
+ * News Servlet Class
+ * Return the News titles and image URL as JSONArray
+ * Read News from server disk(news1.txt,news2.txt. ...)
+ * Initial the news image from server disk
  * @author GawainGuo
- *
+ * Last modify time 2014/12/1
  */
 
 public class News extends HttpServlet{

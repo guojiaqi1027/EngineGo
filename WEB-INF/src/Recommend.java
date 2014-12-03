@@ -36,11 +36,27 @@ public class Recommend extends HttpServlet{
 		JSONArray array=new JSONArray();
 		try {
 			ArrayList<String> waitingList=mDatabase.getWaitingListString(userid);
+			int ratedList=mDatabase.getRatingList(userid).length();
 			UserRecommender mRecommender=RecommenderFactory.getRecommender(RecommenderFactory.SPEARMAN_RECOMMENDER);
 			/*
-			 * Get 5 neighbors and 5 movies
+			 * Get n neighbors and 5 movies
 			 */
-			ArrayList<Long> recommendList=mRecommender.getRecommend(userid,5,5);
+			int n=3;
+			ArrayList<Long> recommendList=mRecommender.getRecommend(userid,3,5);
+			int length=ratedList+waitingList.size();
+			if(length>=100){
+				JSONObject jsonObj=new JSONObject();
+				jsonObj.put("result", "false");
+				jsonObj.put("reason", "Cannot get recommendation");
+				array.put(jsonObj);
+				outprint.println(array.toString());
+				return;
+			}
+			while(length!=100&&recommendList.size()<5){
+				recommendList=mRecommender.getRecommend(userid,n++,5);
+				if(n>=100) break;
+			}
+			
 			
 			/*
 			 * If recommend_list has no element as no recommendation can be get

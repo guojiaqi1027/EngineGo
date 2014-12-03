@@ -20,7 +20,7 @@ import sql.MysqlDatabase;
  * @param password 
  * @param email can be null
  * @author GawainGuo
- *
+ * Last modify time 2014/12/1
  */
 
 public class Signup extends HttpServlet{

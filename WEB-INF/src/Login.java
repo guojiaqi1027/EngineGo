@@ -17,7 +17,7 @@ import sql.MysqlDatabase;
  * Connecting to mysql database and verify the username and password
  * Return the verification trought JSON
  * @author JIAQI GUO
- * 2014/11/1
+ * Last modify time 2014/12/1
  */
 
 

@@ -17,7 +17,7 @@ import sql.MysqlDatabase;
  * Print a JSONArray of movie list with name, id and description
  * @param userid from user
  * @author GawainGuo
- *
+ * Last modify time 2014/12/1
  */
 
 public class RatedList extends HttpServlet{

@@ -22,7 +22,7 @@ import sql.MysqlDatabase;
  * @param movieid movie_id the user want to rate
  * @param rate the rate value of this movie
  * @author JIAQI GUO
- *
+ * Last modify time 2014/12/1
  */
 public class Rate extends HttpServlet{
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{

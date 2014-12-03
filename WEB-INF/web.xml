@@ -18,6 +18,12 @@
 
     </servlet>
     <servlet> 
+        <servlet-name>InitialRating</servlet-name> 
+
+        <servlet-class>InitialRating</servlet-class> 
+
+    </servlet>
+    <servlet> 
         <servlet-name>InsertWaitinglist</servlet-name> 
 
         <servlet-class>InsertWaitinglist</servlet-class> 
@@ -119,6 +125,13 @@
         <servlet-name>InsertWaitinglist</servlet-name>
 
         <url-pattern>/insertwaitinglist</url-pattern>  
+
+     </servlet-mapping>
+     <servlet-mapping>   
+
+        <servlet-name>InitialRating</servlet-name>
+
+        <url-pattern>/initial</url-pattern>  
 
      </servlet-mapping>
 

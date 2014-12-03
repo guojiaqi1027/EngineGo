@@ -11,8 +11,12 @@ import org.json.JSONException;
 
 import sql.MysqlDatabase;
 /**
- * 
+ * InsertWaitingList Servlet Class
+ * Insert a new record to waiting_list table in database
+ * @param userid user_id from Client side
+ * @param movieid movie_id from client side
  * @author GawainGuo
+ * Last modify time 2014/12/1
  *
  */
 

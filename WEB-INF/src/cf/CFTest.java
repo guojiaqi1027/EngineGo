@@ -44,8 +44,8 @@ public class CFTest {
 		JDBCDataModel model=new MySQLJDBCDataModel(dataSource,"Rating","User_id","Movie_id","Rating_value", null);
 		System.out.println((System.currentTimeMillis()-start)/1000);
 		try {
-			UserSimilarity similarity=new SpearmanCorrelationSimilarity(model);
-			//UserSimilarity similarity=new PearsonCorrelationSimilarity(model,Weighting.WEIGHTED);
+			//UserSimilarity similarity=new SpearmanCorrelationSimilarity(model);
+			UserSimilarity similarity=new PearsonCorrelationSimilarity(model,Weighting.WEIGHTED);
 			System.out.println("Similarity:"+(System.currentTimeMillis()-start)/1000);
 			//UserSimilarity similarity=new EuclideanDistanceSimilarity(model);
 			/*
@@ -57,13 +57,13 @@ public class CFTest {
 			
 			UserNeighborhood neighborhood=new NearestNUserNeighborhood(5,similarity,model);
 			//UserNeighborhood neighborhood=new ThresholdUserNeighborhood(0.3,similarity,model);
-			for(int i=0;i<neighborhood.getUserNeighborhood(100000).length;i++){
-				System.out.println("neighbor:"+neighborhood.getUserNeighborhood(100000)[i]);
+			for(int i=0;i<neighborhood.getUserNeighborhood(200030).length;i++){
+				System.out.println("neighbor:"+neighborhood.getUserNeighborhood(200030)[i]);
 			}
 			System.out.println((System.currentTimeMillis()-start)/1000);
 			
 			Recommender recommender=new GenericUserBasedRecommender(model,neighborhood,similarity);
-			List<RecommendedItem> list=recommender.recommend(100000, 5);
+			List<RecommendedItem> list=recommender.recommend(200030, 5);
 			System.out.println((System.currentTimeMillis()-start)/1000);
 			System.out.println(list.size());
 			for(int i=0;i<list.size();i++){
